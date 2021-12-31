@@ -11,8 +11,12 @@
        
               height: 150px;
               width:152px;
-              background-color: black;
-              position: relative;
+             border: 1px solid black;
+             border-radius:5px;
+              position: absolute;
+              background-image: url(./\ 1\ \(4\).png);
+              background-repeat:no-repeat;
+
             }
             </style>
    </head>
@@ -75,7 +79,7 @@
                         else{
                         //document.querySelector("#nchsh").style.Right= index+"px";
 
-                        nchsh.style.Left=index +"px";
+                        nchsh.style.left=index +"px";
                         }
                      }
                      if  (e.key=="ArrowRight"){      
@@ -86,7 +90,7 @@
                            location.reload();
 
                         }
-                        nchsh.style.right=index+"px"; 
+                        nchsh.style.left=index+"px"; 
                         //document.body.style.marginLeft= index+"px";
                    }
                    console.log(index)
