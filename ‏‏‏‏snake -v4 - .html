@@ -7,7 +7,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <style>
-          #nchsh { 
+          .l { 
        
               height: 150px;
               width:152px;
@@ -18,10 +18,16 @@
               background-repeat:no-repeat;
 
             }
+            
+            #nchsh2{top:163px;
+
+            }
             </style>
    </head>
    <body >
       <div class="l" id="nchsh" > 
+      </div>
+       <div class="l" id="nchsh2" > 
       </div>
       <!--כאן לשים את הודעה באמצע-->
             <script>
@@ -38,39 +44,42 @@
                 */
                /*nchsh.offsetLeft;
                 nchsh.offsetTop;*/
-               var nchsh = document.getElementById("nchsh");     
+               var nchsh = document.querySelectorAll(".l") ;    
                var index =0;
+               var index2 =0;
                function g(e){ 
                    if(e.key=="ArrowDown"){
-                       index = nchsh.offsetTop+50;
+                       index = nchsh[0].offsetTop+50;
+                       index2 = nchsh[1].offsetTop+50;
                        if (770<index){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
                       
-                      nchsh.style.top=index +"px";
-                       
+                      nchsh[0].style.top=index +"px";
+                      nchsh[1].style.top=index2 +"px";
                      }
                      
                      if (e.key=="ArrowUp"){
-                        index = nchsh.offsetTop-50;
-                     
+                        index = nchsh[0].offsetTop-50;
+                        index2 = nchsh[1].offsetTop-50;
                         if (0>index){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
                         else{
-                           nchsh.style.top=index +"px";
+                           nchsh[0].style.top=index +"px";
+                           nchsh[1].style.top=index2 +"px";
                            //document.body.style.marginTop= index+"px";                        
                         }
                         //document.querySelector("#nchsh").style.Bottom= index+"px";
                         
                      }
                      if (e.key=="ArrowLeft"){
-                        index = nchsh.offsetLeft-50;
-                        
+                        index = nchsh[0].offsetLeft-50;
+                        index2 = nchsh[1].offsetLeft-50;
                         if (0>index){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
@@ -79,18 +88,21 @@
                         else{
                         //document.querySelector("#nchsh").style.Right= index+"px";
 
-                        nchsh.style.left=index +"px";
+                        nchsh[0].style.left=index +"px";
+                        nchsh[1].style.left=index2 +"px";
                         }
                      }
                      if  (e.key=="ArrowRight"){      
-                        index = nchsh.offsetLeft+50;
+                        index = nchsh[0].offsetLeft+50;
+                        index2 = nchsh[1].offsetLeft+50;
                         //index +=50;
                         if (1770<index){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
-                        nchsh.style.left=index+"px"; 
+                        nchsh[0].style.left=index+"px"; 
+                        nchsh[1].style.left=index2+"px"; 
                         //document.body.style.marginLeft= index+"px";
                    }
                    console.log(index)
