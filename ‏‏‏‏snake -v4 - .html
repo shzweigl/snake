@@ -11,7 +11,7 @@
        
               height: 150px;
               width:152px;
-             border: 1px solid black;
+             border: 1px solid rgb(0, 0, 0);
              border-radius:50%;
               position: absolute;
               background-image: url(./\ 1\ \(4\).png);
@@ -21,13 +21,15 @@
             }
             
             #nchsh2{top:100px;
+               border: 1px solid rgb(57, 179, 235);
 
             }
             #nchsh{
+
                z-index:2 ;
             }
            #ohtml {
-            border: 1px solid black; 
+            border: 1px solid rgb(201, 154, 2); 
             width:152px;
             height: 150px;
             background-image: url(הורדה.jfif);
@@ -45,6 +47,7 @@
       <div class="l" id="ohtml" > 
       </div>
             <script>
+              
                of(400,855)
                var nchsh = [document.querySelectorAll(".l")[1],document.querySelectorAll(".l")[0]] ;  
                var mikum ={
@@ -58,6 +61,8 @@
                var index2L =[0,0]
                var index =[0,0];
                function g(e){ 
+                  console.log(nchsh[0].style.top == nchsh[1].style.top &&
+                     nchsh[0].style.left == nchsh[1].style.left, "2")
                   mikum.x =nchsh[0].offsetTop;
                   mikum.y =nchsh[0].offsetLeft;
 
@@ -66,23 +71,23 @@
                   
                   if(e.key=="ArrowDown"){
                         mikum.x+=150;
-                       if (770<mikum.x){
+                       if (770<mikum.x || tcak()){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
-                        mtop()
+                        mtopmleft()
                      }
                      
                      if (e.key=="ArrowUp"){
                         mikum.x-=150;
-                        if (0>mikum.x){
+                        if (0>mikum.x || tcak()){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
                         else{
-                           mtop()
+                           mtopmleft()
                                            
                         }
                         
@@ -90,7 +95,7 @@
                      }
                      if (e.key=="ArrowLeft"){
                         mikum.y-=150;
-                        if (0>mikum.y){
+                        if (0>mikum.y || tcak()){
 
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
@@ -99,30 +104,24 @@
                         else{
                         
 
-                           mleft()                        
+                           mtopmleft()                        
                         }
                      }
                      if  (e.key=="ArrowRight"){      
                         mikum.y+=150;
-                        if (1770<mikum.y){
+                        if (1770<mikum.y || tcak()){
                            alert(" נפסלת\n נסה שוב")
                            location.reload();
 
                         }
-                        mleft()                     
+                        mtopmleft()                     
                    }
                    console.log(index2L[0])
-                   
-                   
-                   
-                   
                   }
                
-                  function mtop(){
+                  function mtopmleft(){
                      nchsh[0].style.top=mikum.x +"px";
                      nchsh[1].style.top=zanav.x +"px";          
-                  }
-                  function mleft(){
                      nchsh[0].style.left=mikum.y +"px";
                      nchsh[1].style.left=zanav.y +"px";          
                   }
@@ -133,8 +132,19 @@
                    o.style.top=p1 +"px";
                      o.style.left=p2 +"px";          
                   }
+                  function tcak(){
+                     console.log(nchsh[0].style.top , nchsh[1].style.top ,
+                     nchsh[0].style.left , nchsh[1].style.left)
+                     if(   nchsh[0].style.top == nchsh[1].style.top &&
+                     nchsh[0].style.left == nchsh[1].style.left){
+                        return true;
+                     }
+                     else{
+                        return false;
+                     }
+                  }
+
                   document.onkeydown=g;
                   </script>
    </body>
    </html>
-
