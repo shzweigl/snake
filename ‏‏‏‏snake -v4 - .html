@@ -49,7 +49,8 @@
             <script>
               
                of(400,855)
-               var nchsh = [document.querySelectorAll(".l")[1],document.querySelectorAll(".l")[0]] ;  
+               var nchsh = [document.querySelectorAll(".l")[0],document.querySelectorAll(".l")[1]] ;  
+               nchsh[1].style.top=0+"px"
                var mikum ={
                   x:0, //right + left
                   y:0 // top + bottom
@@ -135,8 +136,8 @@
                   function tcak(){
                      console.log(nchsh[0].style.top , nchsh[1].style.top ,
                      nchsh[0].style.left , nchsh[1].style.left)
-                     if(   nchsh[0].style.top == nchsh[1].style.top &&
-                     nchsh[0].style.left == nchsh[1].style.left){
+                     if(   mikum.x ==  nchsh[1].style.top &&
+                     mikum.y ==  nchsh[1].style.left){
                         return true;
                      }
                      else{
