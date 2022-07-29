@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--כאן-->
+<html>
+
+<head>
+   <title>
+      משחק נחש
+   </title>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <style>
+      .l {
+
+         height: 150px;
+         width: 152px;
+         border: 1px solid rgb(0, 0, 0);
+         border-radius: 50%;
+         position: absolute;
+         background-image: url(./\ 1\ \(4\).png);
+         background-repeat: no-repeat;
+         z-index: 1;
+         background-size: 100%;
+      }
+
+      #nchsh2 {
+         top: 100px;
+         border: 1px solid rgb(57, 179, 235);
+
+      }
+
+      #nchsh {
+
+         z-index: 2;
+      }
+
+      #ohtml {
+         border: 1px solid rgb(201, 154, 2);
+         width: 152px;
+         height: 150px;
+         background-image: url(הורדה.jfif);
+
+
+      }
+ /* #nikod    {
+
+
+
+      }*/
+   </style>
+</head>
+
+<body>
+   <div class="l" id="nchsh">
+   </div>
+   <div class="l" id="nchsh2">
+   </div>
+
+   <div class="l" id="ohtml">
+   </div>
+   <!--p id="nikod" > </p-->
+   <script>
+      var tz;
+      var mhirot = 1000; 
+//מגירה שמחזיקה כמה פעמים הוא אכל
+var food1 =0;
+
+      of(308, 908
+      )
+      var kivonnaw = "ArrowLeft";
+      var kivon;
+      var nchsh = [document.querySelectorAll(".l")[0], document.querySelectorAll(".l")[1]];
+      nchsh[1].style.top = 0 + "px"
+      var mikum = {
+         x: 0, //right + left
+         y: 0 // top + bottom
+      };
+      var zanav = {
+         x: 0, //right + left
+         y: 0 // top + bottom
+      };
+      var index2L = [0, 0]
+      var index = [0, 0];
+      function g(e) {
+         clearInterval (tz)
+         console.log(nchsh[0].style.top == nchsh[1].style.top &&
+            nchsh[0].style.left == nchsh[1].style.left, "2")
+         mikum.x = nchsh[0].offsetTop;
+         mikum.y = nchsh[0].offsetLeft;
+
+         zanav.x = mikum.x;
+         zanav.y = mikum.y;
+
+         if (e.key == "ArrowDown" && kivon != "ArrowUp") {
+            mikum.x += 150;
+            if (770 < mikum.x || tcak()) {
+               alert(" נפסלת\n נסה שוב" +"\n הניקוד שלך הוא : "+food1)
+               location.reload();
+
+            }
+
+            //בדיקה האם אכל את האוכל 
+            //להוסיף נקודה ולהזיז את האוכל 
+            var ochl = document.getElementById("ohtml");
+            ochl.offsetTop
+            if (mikum.x == ochl.offsetTop && nchsh[0].offsetLeft == ochl.offsetLeft) {
+               food();
+            }
+            mtopmleft()
+            kivon = "ArrowDown";
+         }
+
+         if (e.key == "ArrowUp" && kivon != "ArrowDown") {
+            mikum.x -= 150;
+            if (0 > mikum.x || tcak()) {
+               alert(" נפסלת\n נסה שוב" +"\n הניקוד שלך הוא : "+food1)
+               location.reload();
+
+            }
+            else {
+               //בדיקה האם אכל את האוכל 
+               //להוסיף נקודה ולהזיז את האוכל 
+               var ochl = document.getElementById("ohtml");
+               ochl.offsetTop
+               if (mikum.x == ochl.offsetTop && nchsh[0].offsetLeft == ochl.offsetLeft) {
+                  food();
+               }
+               mtopmleft()
+               kivon = "ArrowUp"
+            }
+
+
+         }
+         if (e.key == "ArrowLeft" && kivon != "ArrowRight") {
+            mikum.y -= 150;
+            if (0 > mikum.y || tcak()) {
+
+               alert(" נפסלת\n נסה שוב" +"\n הניקוד שלך הוא : "+food1)
+               location.reload();
+
+            }
+            else {
+
+               //בדיקה האם אכל את האוכל 
+               //להוסיף נקודה ולהזיז את האוכל 
+               var ochl = document.getElementById("ohtml");
+               ochl.offsetTop
+               if (nchsh[0].offsetTop == ochl.offsetTop && mikum.y == ochl.offsetLeft) {
+                  food();
+               }
+               mtopmleft()
+               kivon = "ArrowLeft";
+            }
+         }
+         if (e.key == "ArrowRight" && kivon != "ArrowLeft") {
+            mikum.y += 150;
+            if (1770 < mikum.y || tcak()) {
+               alert(" נפסלת\n נסה שוב" +"\n הניקוד שלך הוא : "+food1)
+               location.reload();
+
+            }
+
+
+            //בדיקה האם אכל את האוכל 
+            //להוסיף נקודה ולהזיז את האוכל 
+            var ochl = document.getElementById("ohtml");
+            ochl.offsetTop
+            if (nchsh[0].offsetTop == ochl.offsetTop && mikum.y == ochl.offsetLeft) {
+               food();
+            }
+            mtopmleft()
+
+            kivon = "ArrowRight";
+         }
+         console.log(index2L[0])
+         tz =setInterval(g,mhirot,e);
+      }
+
+      function mtopmleft() {
+         nchsh[0].style.top = mikum.x + "px";
+         nchsh[1].style.top = zanav.x + "px";
+         nchsh[0].style.left = mikum.y + "px";
+         nchsh[1].style.left = zanav.y + "px";
+      }
+
+      function of(p1, p2) {
+         var o =
+            document.getElementById("ohtml")
+         o.style.top = p1 + "px";
+         o.style.left = p2 + "px";
+      }
+      function tcak() {
+         console.log(nchsh[0].style.top, nchsh[1].style.top,
+            nchsh[0].style.left, nchsh[1].style.left)
+         if (mikum.x == nchsh[1].style.top &&
+            mikum.y == nchsh[1].style.left) {
+            return true;
+         }
+         else {
+            return false;
+         }
+
+      }
+
+      function food() {
+         food1++;
+        //var nikod= document.querySelector("#nikod");
+       // nikod.textContent="הניקוד של הוא :"+food1;
+         var rgil = Math.floor(Math.random() * 10);
+         var d = new Date();
+
+         if (d.getSeconds() % 2 == 0) {
+            rgil = Math.floor(Math.random() * 10);
+         }
+         rgil = 8 + 150 * rgil;
+
+         //1. בדיקה של מיקום חדש לא במקום הישן
+         //2.שלא יעבור את הגבולות 
+         var ochl = document.getElementById("ohtml");
+         while (ochl.offsetTop == rgil || rgil > 770) {
+            rgil = Math.floor(Math.random() * 10);
+            rgil = 8 + 150 * rgil;
+
+         }
+
+         //3.ביצוע של 8 פיקסל פעם אחת ועוד כפולות של 150 
+         ochl.style.top = (rgil) + "px";
+
+
+         var rgil2 = Math.floor(Math.random() * 10);
+         var d2 = new Date();
+
+         if (d2.getSeconds() % 2 == 0) {
+            rgil2 = Math.floor(Math.random() * 10);
+         }
+         rgil2 = 8 + 150 * rgil2;
+
+         //1. בדיקה של מיקום חדש לא במקום הישן
+         //2.שלא יעבור את הגבולות 
+         var ochl2 = document.getElementById("ohtml");
+         while (ochl2.offsetLeft == rgil2 || rgil2 > 1770) {
+            rgil2 = Math.floor(Math.random() * 10);
+            rgil2 = 8 + 150 * rgil2;
+
+         }
+
+         //3.ביצוע של 8 פיקסל פעם אחת ועוד כפולות של 150 
+         ochl2.style.left = (rgil2) + "px";
+
+         // להגריל ולעדכן את השמאל
+         console.log({ rgil }, { rgil2 });
+         if (mhirot >100){mhirot=mhirot-100}
+      }
+
+      document.onkeydown = g;
+   </script>
+</body>
+
+</html>

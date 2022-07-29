@@ -1,2 +1,7 @@
-const d = new Date();
-document.getElementById("demo").innerHTML = d.getSeconds() %2;
+var rgil = Math.floor(Math.random() * 10);
+var d = new Date();
+
+if (d.getSeconds() %2 ==0){
+	rgil = Math.floor(Math.random() * 10);
+}
+alert (rgil)

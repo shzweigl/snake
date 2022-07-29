@@ -1,0 +1,158 @@
+<!DOCTYPE html><!--כאן-->
+<html >
+   <head>
+      <title>
+         משחק נחש       
+      </title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+          .l { 
+       
+              height: 150px;
+              width:152px;
+             border: 1px solid rgb(0, 0, 0);
+             border-radius:50%;
+              position: absolute;
+              background-image: url(./\ 1\ \(4\).png);
+              background-repeat:no-repeat;
+               z-index:1 ;
+               background-size: 100%;
+            }
+            
+            #nchsh2{top:100px;
+               border: 1px solid rgb(57, 179, 235);
+
+            }
+            #nchsh{
+
+               z-index:2 ;
+            }
+           #ohtml {
+            border: 1px solid rgb(201, 154, 2); 
+            width:152px;
+            height: 150px;
+            background-image: url(הורדה.jfif);
+
+
+            }
+            </style>
+   </head>
+   <body >
+      <div class="l" id="nchsh" > 
+      </div>
+      <div class="l" id="nchsh2" > 
+     </div>
+
+      <div class="l" id="ohtml" > 
+      </div>
+            <script>
+              
+            
+               of(400,855)
+               var kivonnaw="ArrowLeft";
+               var kivon;
+               var nchsh = [document.querySelectorAll(".l")[0],document.querySelectorAll(".l")[1]] ;  
+               nchsh[1].style.top=0+"px"
+               var mikum ={
+                  x:0, //right + left
+                  y:0 // top + bottom
+               };  
+               var zanav ={
+                  x:0, //right + left
+                  y:0 // top + bottom
+               };  
+               var index2L =[0,0]
+               var index =[0,0];
+               function g(e){
+                 
+                  console.log(nchsh[0].style.top == nchsh[1].style.top &&
+                     nchsh[0].style.left == nchsh[1].style.left, "2")
+                  mikum.x =nchsh[0].offsetTop;
+                  mikum.y =nchsh[0].offsetLeft;
+
+                  zanav.x = mikum.x;
+                  zanav.y = mikum.y;
+                  
+                  if(e.key=="ArrowDown" && kivon != "ArrowUp"){
+                        mikum.x+=150;
+                       if (770<mikum.x || tcak()){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        mtopmleft()
+                        kivon = "ArrowDown";
+                     }
+                     
+                     if (e.key=="ArrowUp"&& kivon != "ArrowDown"){
+                        mikum.x-=150;
+                        if (0>mikum.x || tcak()){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+                           mtopmleft()
+                           kivon =  "ArrowUp"           
+                        }
+                        
+                        
+                     }
+                     if (e.key=="ArrowLeft"&& kivon != "ArrowRight"){
+                        mikum.y-=150;
+                        if (0>mikum.y || tcak()){
+
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+                        
+
+                           mtopmleft()  
+                           kivon="ArrowLeft";                      
+                        }
+                     }
+                     if  (e.key=="ArrowRight"&& kivon != "ArrowLeft"){      
+                        mikum.y+=150;
+                        if (1770<mikum.y || tcak()){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        mtopmleft()   
+                        kivon="ArrowRight";                  
+                   }
+                   console.log(index2L[0])
+                  }
+               
+                  function mtopmleft(){
+                     nchsh[0].style.top=mikum.x +"px";
+                     nchsh[1].style.top=zanav.x +"px";          
+                     nchsh[0].style.left=mikum.y +"px";
+                     nchsh[1].style.left=zanav.y +"px";          
+                  }
+                  
+                  function of(p1, p2){
+                     var o=
+                     document.getElementById("ohtml")
+                   o.style.top=p1 +"px";
+                     o.style.left=p2 +"px";          
+                  }
+                  function tcak(){
+                     console.log(nchsh[0].style.top , nchsh[1].style.top ,
+                     nchsh[0].style.left , nchsh[1].style.left)
+                     if(   mikum.x ==  nchsh[1].style.top &&
+                     mikum.y ==  nchsh[1].style.left){
+                        return true;
+                     }
+                     else{
+                        return false;
+                     }
+                  }
+
+                  document.onkeydown=g;
+                  </script>
+   </body>
+   </html>
