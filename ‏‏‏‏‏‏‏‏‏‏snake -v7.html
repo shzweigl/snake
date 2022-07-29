@@ -1,0 +1,132 @@
+<!DOCTYPE html><!--כאן-->
+<html >
+   <head>
+      <title>
+         משחק נחש       
+      </title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+          .l { 
+       
+              height: 150px;
+              width:152px;
+             border: 1px solid black;
+             border-radius:50%;
+              position: absolute;
+              background-image: url(./\ 1\ \(4\).png);
+              background-repeat:no-repeat;
+               z-index:1 ;
+               background-size: 100%;
+            }
+            
+            #nchsh2{top:100px;
+
+            }
+            #nchsh{
+               z-index:2 ;
+            }
+           #ohtml {
+            border: 1px solid black; 
+            width:152px;
+            height: 150px;
+            background-image: url(הורדה.jfif);
+
+
+            }
+            </style>
+   </head>
+   <body >
+      <div class="l" id="nchsh" > 
+      </div>
+      <div class="l" id="nchsh2" > 
+     </div>
+
+      <div class="l" id="ohtml" > 
+      </div>
+            <script>
+               of(400,855)
+               var nchsh = [document.querySelectorAll(".l")[1],document.querySelectorAll(".l")[0]] ;    
+               var index =[0,0];
+               function g(e){ 
+                  if(e.key=="ArrowDown"){
+                     
+                     index[0] = nchsh[0].offsetTop+150;
+                     index[1] = nchsh[0].offsetTop;
+
+                       if (770<index[0]){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        mtop()
+                     }
+                     
+                     if (e.key=="ArrowUp"){
+                        index[0] = nchsh[0].offsetTop-150;
+                        index[1] = nchsh[0].offsetTop;
+
+                        if (0>index[0]){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+                           mtop()
+                                           
+                        }
+                        
+                        
+                     }
+                     if (e.key=="ArrowLeft"){
+                        index[0] = nchsh[0].offsetLeft-150;
+                        index[1] = nchsh[0].offsetLeft;
+                        if (0>index[0]){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+                        
+
+                           mleft()                        
+                        }
+                     }
+                     if  (e.key=="ArrowRight"){      
+                        index[0] = nchsh[0].offsetLeft+150;
+                        index[1] = nchsh[0].offsetLeft;
+                        
+                        if (1770<index[0]){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        mleft()                     
+                   }
+                   console.log(index[0])
+                   
+                   
+                   
+                   
+                  }
+               
+                  function mtop(){
+                     nchsh[0].style.top=index[0] +"px";
+                     nchsh[1].style.top=index[1] +"px";          
+                  }
+                  function mleft(){
+                     nchsh[0].style.left=index[0] +"px";
+                     nchsh[1].style.left=index[1] +"px";          
+                  }
+                  
+                  function of(p1, p2){
+                     var o=
+                     document.getElementById("ohtml")
+                   o.style.top=p1 +"px";
+                     o.style.left=p2 +"px";          
+                  }
+                  document.onkeydown=g;
+                  </script>
+   </body>
+   </html>
+

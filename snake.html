@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+   <head>
+      <title>
+         משחק נחש       
+      </title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+          #nchsh { 
+       
+              height: 150px;
+              width:152px;
+              background-color: black;
+            }
+            </style>
+   </head>
+   <body >
+      <div class="l" id="nchsh" > 
+      </div>
+      <!--כאן לשים את הודעה באמצע-->
+            <script>
+                
+                /*
+                
+                ArrowUp
+                ArrowLeft
+                ArrowRight
+                left = 37
+                up = 38
+                right = 39
+                down = 40
+                */
+               var index =0;
+               function g(e){ 
+                   
+                   if(e.key=="ArrowDown"){
+                       index +=50;
+                       document.body.style.marginTop= index+"px";
+                       
+                       
+                     }
+                     
+                     if (e.key=="ArrowUp"){
+                        index -=50; 
+                        if (0>index){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+
+                           document.body.style.marginTop= index+"px";                        
+                        }
+                        //document.querySelector("#nchsh").style.Bottom= index+"px";
+                        
+                     }
+                     if (e.key=="ArrowLeft"){
+                        index -=50;
+                        if (0>index){
+                           alert(" נפסלת\n נסה שוב")
+                           location.reload();
+
+                        }
+                        else{
+                        //document.querySelector("#nchsh").style.Right= index+"px";
+                        document.body.style.marginLeft= index+"px";
+                        }
+                     }
+                     if  (e.key=="ArrowRight"){                    
+                        index +=50;
+                        // document.querySelector("#nchsh").style.Left= index+"px";
+                        document.body.style.marginLeft= index+"px";
+                   }
+                   console.log(index)
+                   
+                   
+                   
+                   
+                  }
+                  document.onkeydown=g;
+                  </script>
+   </body>
+   </html>
+
